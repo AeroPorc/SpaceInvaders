@@ -8,7 +8,9 @@ public class BloodSplatterManager : MonoBehaviour
     private GameObject _bloodDecalPrefab; 
     private ParticleSystem  _bloodparticles;
     private ParticleSystem.Particle[] _particles;
-    [serializeField, Tooltips ("A splatter will spawn every X particles dies")]
+    
+    [SerializeField]
+    [Tooltip ("A splatter will spawn every X particles dies")]
     private int _numSplatters = 0;
 
     private void Start()
