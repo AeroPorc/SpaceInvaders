@@ -55,7 +55,7 @@ public class Wave : MonoBehaviour
         {
             invaderPerColumn.Add(new() { id = i, invaders= new() });
         }
-        for (int i = 0; i < rows; i++)
+        for (int i = 0; i < rows; i++)  
         {
             invaderPerRow.Add(new() { id = i, invaders = new() });
         }
