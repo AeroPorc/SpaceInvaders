@@ -8,6 +8,8 @@ public class BloodSplatterManager : MonoBehaviour
     private GameObject _bloodDecalPrefab; 
     private ParticleSystem  _bloodparticles;
     private ParticleSystem.Particle[] _particles;
+    [serializeField, Tooltips ("A splatter will spawn every X particles dies")]
+    private int _numSplatters = 0;
 
     private void Start()
     {
@@ -19,13 +21,13 @@ public class BloodSplatterManager : MonoBehaviour
     {
         int num_particlesAlive = _bloodparticles.GetParticles(_particles);
 
-        for (int i = 0; i < num_particlesAlive; i++)
+        for (int i = 0; i < num_particlesAlive; i += _numSplatters)
         {
             if (_particles[i].remainingLifetime <= 0.1f) 
             {
-                Vector3 spawnPosition = _particles[i].position;
-                Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
-                Instantiate(_bloodDecalPrefab, spawnPosition, randomRotation);
+            Vector3 spawnPosition = _particles[i].position;
+            Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+            Instantiate(_bloodDecalPrefab, spawnPosition, randomRotation);
             }
         }
     }
