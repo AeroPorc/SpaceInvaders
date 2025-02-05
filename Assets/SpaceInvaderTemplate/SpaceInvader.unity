@@ -190,7 +190,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7369880722360228486, guid: 42269f87d33f3eb4898473401db125ae,
     type: 3}
   shootAt: {fileID: 495127406}
-  shootCooldown: 0.3
+  shootCooldown: 0.7
   collideWithTag: Untagged
 --- !u!212 &582271455
 SpriteRenderer:
@@ -592,19 +592,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e4bd5f2beb340842a367b7538126110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rows: 5
-  columns: 11
+  rows: 7
+  columns: 12
   invaderPrefab: {fileID: 9109969425864263349, guid: 7ab41d612eaa4c040b94ebea77be05a2,
     type: 3}
-  bounds: {x: 10, y: 4}
+  bounds: {x: 12, y: 4}
   difficultyProgress:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
+      time: 0.0034751892
+      value: 0.2
       inSlope: 0
       outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.24309315
+      value: 0.55108577
+      inSlope: -0.4083108
+      outSlope: -0.4083108
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.27479452
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.3231761
+      value: 0
+      inSlope: 0.085668914
+      outSlope: 0.085668914
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5804266
+      value: 0.7518082
+      inSlope: 1.4688023
+      outSlope: 1.4688023
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.098084085
+    - serializedVersion: 3
+      time: 0.65273017
+      value: 0.20108604
+      inSlope: 1.0937234
+      outSlope: 1.0937234
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -612,21 +648,21 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2.5232973
-      outSlope: 2.5232973
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.0625
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  speedMin: 0.5
-  speedMax: 5
+  speedMin: 0
+  speedMax: 4
   shootRandomMin: {x: 2, y: 4}
   shootRandomMax: {x: 0.5, y: 1.5}
   timeBeforeFirstShoot: 5
-  downStep: 0.3
+  downStep: 0.6
 --- !u!4 &1833304615
 Transform:
   m_ObjectHideFlags: 0
@@ -636,7 +672,7 @@ Transform:
   m_GameObject: {fileID: 1833304613}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.75, z: 0}
+  m_LocalPosition: {x: 0, y: 6.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
