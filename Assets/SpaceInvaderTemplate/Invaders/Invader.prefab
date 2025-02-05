@@ -103,6 +103,8 @@ MonoBehaviour:
     type: 3}
   shootAt: {fileID: 8808591723042360307}
   collideWithTag: Player
+  bloodParticlePrefab: {fileID: 2775779931079856779, guid: 010dd442dd87f154890c014b81c27f25,
+    type: 3}
 --- !u!61 &1286698669282929100
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -139,7 +141,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 16, y: 12.08}
+    oldSize: {x: 1.3333334, y: 1.0066667}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

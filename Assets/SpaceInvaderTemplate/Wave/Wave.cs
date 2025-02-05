@@ -209,6 +209,12 @@ public class Wave : MonoBehaviour
             {
                 //Remove Row
                 invaderPerRow.RemoveAt(indexRow);
+                GameObject BloodDecalParent = GameObject.Find("BloodDecals");
+                if (BloodDecalParent != null)
+                {
+                    Destroy(BloodDecalParent);
+                }
+
             }
             else
             {
