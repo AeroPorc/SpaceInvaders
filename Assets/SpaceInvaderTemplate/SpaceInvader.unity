@@ -571,6 +571,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2352845775384714681, guid: 010dd442dd87f154890c014b81c27f25,
+        type: 3}
+      propertyPath: _numSplatters
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2775779931079856779, guid: 010dd442dd87f154890c014b81c27f25,
         type: 3}
       propertyPath: m_Name
@@ -580,6 +585,11 @@ PrefabInstance:
         type: 3}
       propertyPath: playOnAwake
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773618878953569090, guid: 010dd442dd87f154890c014b81c27f25,
+        type: 3}
+      propertyPath: SubModule.subEmitters.Array.data[0].emitter
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8756571428301988153, guid: 010dd442dd87f154890c014b81c27f25,
         type: 3}

@@ -207,6 +207,7 @@ public class Wave : MonoBehaviour
             row.invaders.Remove(invader);
             if (row.invaders.Count <= 0)
             {
+                //Remove Row
                 invaderPerRow.RemoveAt(indexRow);
             }
             else
