@@ -662,7 +662,7 @@ MonoBehaviour:
   shootRandomMin: {x: 2, y: 4}
   shootRandomMax: {x: 0.5, y: 1.5}
   timeBeforeFirstShoot: 5
-  downStep: 0.6
+  downStep: 0.5
 --- !u!4 &1833304615
 Transform:
   m_ObjectHideFlags: 0
