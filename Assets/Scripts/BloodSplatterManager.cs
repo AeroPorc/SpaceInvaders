@@ -34,6 +34,7 @@ public class BloodSplatterManager : MonoBehaviour
             {
             Vector3 spawnPosition = _particles[i].position;
             Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+            spawnPosition.z = 1;
             Instantiate(_bloodDecalPrefab, spawnPosition, randomRotation, bloodDecalParent.transform);
             }
         }
