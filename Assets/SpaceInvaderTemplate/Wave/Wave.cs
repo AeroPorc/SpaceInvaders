@@ -208,6 +208,7 @@ public class Wave : MonoBehaviour
             if (row.invaders.Count <= 0)
             {
                 invaderPerRow.RemoveAt(indexRow);
+                FadeManager.Instance.StartFadeIn();
             }
             else
             {

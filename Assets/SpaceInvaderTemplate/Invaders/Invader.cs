@@ -26,7 +26,8 @@ public class Invader : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag != collideWithTag) { return; }
-
+        float time = AudioManager.Instance.PlayPlayerSound(1);
+        Destroy(gameObject, time);
         Destroy(gameObject);
         Destroy(collision.gameObject);
     }
