@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d21bc73da8a659c458583c463f4ab117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: {fileID: 0}
+  volume: {fileID: 805531695}
   fadeDuration: 0.5
   maxIntensity: 0.5
   minIntensity: 0
@@ -717,6 +717,7 @@ GameObject:
   - component: {fileID: 1506162583}
   - component: {fileID: 1506162582}
   - component: {fileID: 1506162581}
+  - component: {fileID: 1506162585}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -774,7 +775,7 @@ MonoBehaviour:
   deadzone: 0.2
   currentSpeed: 0
   maxSpeed: 5
-  acceleration: 0
+  acceleration: 1
   bulletPrefab: {fileID: 7369880722360228486, guid: 42269f87d33f3eb4898473401db125ae,
     type: 3}
   shootAt: {fileID: 1091247398}
@@ -848,6 +849,14 @@ Transform:
   - {fileID: 1091247398}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1506162585
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506162580}
+  m_Enabled: 1
 --- !u!1 &1667879181
 GameObject:
   m_ObjectHideFlags: 0
