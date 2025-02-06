@@ -49,6 +49,8 @@ public class Wave : MonoBehaviour
     List<Column> invaderPerColumn = new(); // Keeps track of invaders per column. A column will be removed if empty.
     List<Row> invaderPerRow = new(); // Keeps track of invaders per row. A row will be removed if empty.
 
+    private bool _activated = false;
+
     void Awake()
     {
         shootCooldown = timeBeforeFirstShoot;
@@ -87,11 +89,18 @@ public class Wave : MonoBehaviour
     {
         UpdateMovement();
         UpdateShoot();
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            _activated = !_activated;
+        }
     }
 
     void FixedUpdate()
     {
-        UpdateInvaderPosition();
+        if (_activated == true)
+        {
+            UpdateInvaderPosition();
+        }
     }
 
     private void UpdateShoot()
