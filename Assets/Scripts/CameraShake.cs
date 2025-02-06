@@ -30,7 +30,9 @@ public class CameraShake : MonoBehaviour
             originalPos = camTransform.localPosition;
             if (shakeDuration > 0)
             {
-                camTransform.localPosition = Vector3.Lerp(camTransform.localPosition,originalPos + Random.insideUnitSphere * shakeAmount,Time.deltaTime * 3);
+                Vector3 shakePos = originalPos + Random.insideUnitSphere * shakeAmount;
+                shakePos.z = originalPos.z; 
+                camTransform.localPosition = Vector3.Lerp(camTransform.localPosition, shakePos, Time.deltaTime * 3);
 
                 shakeDuration -= Time.deltaTime * decreaseFactor;
             }
