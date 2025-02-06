@@ -81,8 +81,12 @@ public class Wave : MonoBehaviour
                 invaderPerColumn[i].invaders.Add(invader);
                 invaderPerRow[j].invaders.Add(invader);
             }
-        }
-        
+        }        
+    }
+
+    void Start()
+    {
+        AudioManager.Instance.PlayPlayerSound(8);
     }
 
     void Update()

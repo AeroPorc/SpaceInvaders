@@ -5,7 +5,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float deadzone;
-    [SerializeField] private float currentSpeed;
     [SerializeField] private float maxSpeed;
 
     [SerializeField] private GameObject bulletPrefab = null;
@@ -42,7 +41,6 @@ public class Player : MonoBehaviour
 
         move = Mathf.Sign(move);
         float delta = move * maxSpeed * Time.deltaTime;
-
         transform.position = GameManager.Instance.KeepInBounds(transform.position + Vector3.right * delta);
     }
 
