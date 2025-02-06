@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Eye-shaded 2
+  m_Name: Wing-shaded
   m_Shader: {fileID: 4800000, guid: 619ed5963218dfd4091b26e865734420, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -36,7 +36,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample0:
-        m_Texture: {fileID: 2800000, guid: 10810a2ab86ecc94e95c74df65ee2e0b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 92d6c7225cb58324c9acbffead385ad7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -61,7 +61,7 @@ Material:
     - _DstBlend: 10
     - _EnableFogOnTransparent: 1
     - _Float2: 0.367
-    - _HDR: 2.5
+    - _HDR: 1
     - _Keyword0: 1
     - _OpaqueCullMode: 2
     - _ReceivesSSR: 1

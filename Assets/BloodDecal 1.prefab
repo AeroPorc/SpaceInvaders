@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 757706161ab7b8a44955c869dcf10548, type: 2}
+  - {fileID: 2100000, guid: 6041276cde783c8469984cadc87e9208, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8878830125750026489}
   m_Layer: 0
-  m_Name: BloodDecal
+  m_Name: BloodDecal 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
