@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float deadzone = 0.3f;
-    [SerializeField] private float speed = 1f;
+    [SerializeField] private float deadzone;
+    [SerializeField] private float currentSpeed;
+    [SerializeField] private float maxSpeed;
+    [SerializeField] private float acceleration;
 
     [SerializeField] private Bullet bulletPrefab = null;
     [SerializeField] private Transform shootAt = null;
-    [SerializeField] private float shootCooldown = 1f;
+    [SerializeField] private float shootCooldown;
     [SerializeField] private string collideWithTag = "Untagged";
 
     private float lastShootTimestamp = Mathf.NegativeInfinity;
@@ -20,20 +22,21 @@ public class Player : MonoBehaviour
         UpdateActions();
     }
 
-    void UpdateMovement()
+    void UpdateMovement() 
     {
         float move = Input.GetAxis("Horizontal");
         if (Mathf.Abs(move) < deadzone) { return; }
 
-        move = Mathf.Sign(move);
-        float delta = move * speed * Time.deltaTime;
+        float targetSpeed = move * maxSpeed; 
+        currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, acceleration * Time.deltaTime);
+
+        float delta = currentSpeed * Time.deltaTime;
         transform.position = GameManager.Instance.KeepInBounds(transform.position + Vector3.right * delta);
     }
 
     void UpdateActions()
     {
-        if (    Input.GetKey(KeyCode.Space) 
-            &&  Time.time > lastShootTimestamp + shootCooldown )
+        if (Input.GetKey(KeyCode.Space) &&  Time.time > lastShootTimestamp + shootCooldown )
         {
             Shoot();
         }
@@ -43,6 +46,7 @@ public class Player : MonoBehaviour
     {
         Instantiate(bulletPrefab, shootAt.position, Quaternion.identity);
         lastShootTimestamp = Time.time;
+        AudioManager.Instance.PlayPlayerSound(1);
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
