@@ -9,6 +9,8 @@ public class Invader : MonoBehaviour
     [SerializeField] private Transform shootAt = null;
     [SerializeField] private string collideWithTag = "Player";
 
+    [SerializeField] private GameObject bloodParticlePrefab = null;
+
     internal Action<Invader> onDestroy;
 
     public Vector2Int GridIndex { get; private set; }
@@ -28,6 +30,7 @@ public class Invader : MonoBehaviour
         if(collision.gameObject.tag != collideWithTag) { return; }
         float time = AudioManager.Instance.PlayPlayerSound(1);
         Destroy(gameObject, time);
+        Instantiate(bloodParticlePrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
         Destroy(collision.gameObject);
     }
