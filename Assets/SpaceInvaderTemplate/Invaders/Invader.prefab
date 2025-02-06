@@ -103,6 +103,8 @@ MonoBehaviour:
     type: 3}
   shootAt: {fileID: 8808591723042360307}
   collideWithTag: Player
+  bloodParticlePrefab: {fileID: 2775779931079856779, guid: 010dd442dd87f154890c014b81c27f25,
+    type: 3}
 --- !u!61 &1286698669282929100
 BoxCollider2D:
   m_ObjectHideFlags: 0
