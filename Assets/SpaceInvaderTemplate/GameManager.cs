@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -13,6 +14,9 @@ public class GameManager : MonoBehaviour
     private Bounds Bounds => new Bounds(transform.position, new Vector3(bounds.x, bounds.y, 1000f));
 
     [SerializeField] private float gameOverHeight;
+
+    [SerializeField] private GameObject _camera;
+    [SerializeField] private GameObject _gameOverPrefab;
 
     void Awake()
     {
@@ -71,7 +75,9 @@ public class GameManager : MonoBehaviour
     public void PlayGameOver()
     {
         Debug.Log("Game Over");
-        Time.timeScale = 0f;
+        GameObject.Instantiate(_gameOverPrefab, _camera.transform);
+        _camera.GetComponent<CameraShake>().shakecamera();
+        StartCoroutine(WaitAndRestart(3f));
     }
 
     public void OnDrawGizmos()
@@ -83,5 +89,12 @@ public class GameManager : MonoBehaviour
         Gizmos.DrawLine(
             transform.position + Vector3.up * (gameOverHeight - bounds.y * 0.5f) - Vector3.right * bounds.x * 0.5f,
             transform.position + Vector3.up * (gameOverHeight - bounds.y * 0.5f) + Vector3.right * bounds.x * 0.5f);
+    }
+
+    IEnumerator WaitAndRestart(float time)
+    {
+        yield return new WaitForSecondsRealtime(time);
+        Time.timeScale = 0f;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }
