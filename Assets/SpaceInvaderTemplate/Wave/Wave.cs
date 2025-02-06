@@ -86,7 +86,8 @@ public class Wave : MonoBehaviour
 
     void Start()
     {
-        AudioManager.Instance.PlayPlayerSound(8);
+        AudioSource audio = AudioManager.Instance.PlayPlayerSound(6);
+        audio.loop = true;
     }
 
     void Update()
