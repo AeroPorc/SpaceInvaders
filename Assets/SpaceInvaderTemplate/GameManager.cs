@@ -95,6 +95,5 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(time);
         Time.timeScale = 0f;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }
