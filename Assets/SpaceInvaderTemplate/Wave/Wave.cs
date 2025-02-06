@@ -49,7 +49,7 @@ public class Wave : MonoBehaviour
     List<Column> invaderPerColumn = new(); // Keeps track of invaders per column. A column will be removed if empty.
     List<Row> invaderPerRow = new(); // Keeps track of invaders per row. A row will be removed if empty.
 
-    AudioSource audioSource;
+    private bool _activated = false;
 
     void Awake()
     {
@@ -82,39 +82,24 @@ public class Wave : MonoBehaviour
                 invaderPerRow[j].invaders.Add(invader);
             }
         }
-        UpdateAmbiance();
+        
     }
 
     void Update()
     {
         UpdateMovement();
         UpdateShoot();
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            _activated = !_activated;
+        }
     }
 
-    private void UpdateAmbiance()
+    void FixedUpdate()
     {
-        if (invaders.Count <= 0)
+        if (_activated == true)
         {
-            GameManager.Instance.PlayVictory();
-        }
-
-        if (invaders.Count > invaders.Count / 2)
-        {
-            if (audioSource != null ) audioSource.GetComponent<AudioSource>().Stop();
-            audioSource = AudioManager.Instance.PlayPlayerSound(6);
-            audioSource.loop = true;
-        }
-        else if (invaders.Count > invaders.Count / 4)
-        {
-            if (audioSource != null ) audioSource.GetComponent<AudioSource>().Stop();
-            audioSource = AudioManager.Instance.PlayPlayerSound(5);
-            audioSource.loop = true;
-        }
-        else
-        {
-            if (audioSource != null ) audioSource.GetComponent<AudioSource>().Stop();
-            audioSource = AudioManager.Instance.PlayPlayerSound(8);
-            audioSource.loop = true;
+            UpdateInvaderPosition();
         }
     }
 
@@ -281,5 +266,20 @@ public class Wave : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, new Vector3(bounds.x, bounds.y, 0f));
+    }
+    public void UpdateInvaderPosition()
+    {
+        foreach (var invader in invaders)
+        {
+            Vector3 originalPosition = GetPosition(invader.GridIndex.x, invader.GridIndex.y);
+            Vector3 currentPosition = invader.transform.position;
+            Vector3 randomOffset = new Vector3(
+            Mathf.Sin(Time.time * Random.Range(0.1f, 1f)) * 2f,
+            Mathf.Cos(Time.time * Random.Range(0.1f, 1f)) * 2f,
+            0f
+            );
+            Vector3 targetPosition = originalPosition + randomOffset;
+            invader.transform.position = Vector3.Lerp(currentPosition, targetPosition, Time.deltaTime);
+        }
     }
 }

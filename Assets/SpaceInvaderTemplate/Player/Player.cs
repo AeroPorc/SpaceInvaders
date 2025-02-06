@@ -5,17 +5,33 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float deadzone;
+    [SerializeField] private float currentSpeed;
     [SerializeField] private float maxSpeed;
+    [SerializeField] private float acceleration;
 
-    [SerializeField] private Bullet bulletPrefab = null;
+    [SerializeField] private GameObject bulletPrefab = null;
     [SerializeField] private Transform shootAt = null;
     [SerializeField] private float shootCooldown;
     [SerializeField] private string collideWithTag = "Untagged";
 
-    private float lastShootTimestamp = Mathf.NegativeInfinity;
+    [SerializeField] private int _health = 3;
 
+    [SerializeField] private GameObject _particlePrefab;
+    private bool activated = false;
+
+    private GameObject _camera;
+
+    private float lastShootTimestamp = Mathf.NegativeInfinity;
+    void Awake()
+    {
+        _camera = GameObject.FindGameObjectWithTag("MainCamera");
+    }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            activated = !activated;
+        }
         UpdateMovement();
         UpdateActions();
     }
@@ -25,9 +41,10 @@ public class Player : MonoBehaviour
         float move = Input.GetAxis("Horizontal");
         if (Mathf.Abs(move) < deadzone) { return; }
 
-        move = Mathf.Sign(move);
-        float delta = move * maxSpeed * Time.deltaTime;
+        float targetSpeed = move * maxSpeed; 
+        currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, acceleration * Time.deltaTime);
 
+        float delta = currentSpeed * Time.deltaTime;
         transform.position = GameManager.Instance.KeepInBounds(transform.position + Vector3.right * delta);
     }
 
@@ -43,15 +60,25 @@ public class Player : MonoBehaviour
     {
         Instantiate(bulletPrefab, shootAt.position, Quaternion.identity);
         lastShootTimestamp = Time.time;
-        AudioSource audio = AudioManager.Instance.PlayPlayerSound(3);
-        Destroy(audio, 0.5f);
+        AudioManager.Instance.PlayPlayerSound(1);
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag != collideWithTag) { return; }
+        
+        Destroy(collision.gameObject);
+        if(activated == true)
+        {
+            _camera.GetComponent<CameraShake>().shakecamera();
+            Instantiate(_particlePrefab, collision.transform.position, Quaternion.identity);
+        }
+        
 
-        AudioManager.Instance.PlayPlayerSound(4);
-        GameManager.Instance.PlayGameOver();
+        _health--;
+        if (_health <= 0)
+        {
+            GameManager.Instance.PlayGameOver();
+        }
     }
 }
