@@ -169,7 +169,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4838,7 +4838,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7448292063120907944}
   - component: {fileID: 1596827222094748729}
-  - component: {fileID: 7369880722360228486}
   - component: {fileID: 7187537139655989992}
   - component: {fileID: 6745623824337545215}
   m_Layer: 0
@@ -4916,19 +4915,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7369880722360228486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8901371870798798308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e251aa7e0b6e62e49a24748fdef08eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startVelocity: {x: 0, y: 4, z: 0}
 --- !u!58 &7187537139655989992
 CircleCollider2D:
   m_ObjectHideFlags: 0
