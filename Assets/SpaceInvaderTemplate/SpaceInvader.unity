@@ -307,6 +307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 805531692}
   - component: {fileID: 805531691}
+  - component: {fileID: 805531696}
   - component: {fileID: 805531690}
   - component: {fileID: 805531694}
   - component: {fileID: 805531695}
@@ -537,6 +538,23 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: a426c1d414e2f39499133c2ed20d7fa3, type: 2}
+--- !u!114 &805531696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805531689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da9a801ab817468469925ed6427fec6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 805531692}
+  shakeDuration: 2
+  shakeAmount: 1
+  decreaseFactor: 1
+  shaketrue: 0
 --- !u!1 &879569042
 GameObject:
   m_ObjectHideFlags: 0
