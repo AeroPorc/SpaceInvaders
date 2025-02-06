@@ -76,7 +76,10 @@ public class GameManager : MonoBehaviour
     public void PlayGameOver()
     {
         Debug.Log("Game Over");
-        GameObject.Instantiate(_gameOverPrefab, _camera.transform);
+        GameObject gameOverInstance = GameObject.Instantiate(_gameOverPrefab);
+        Vector3 position = _camera.transform.position + _camera.transform.forward * 1f;
+        position.z = -9f;
+        gameOverInstance.transform.position = position;
         _camera.GetComponent<CameraShake>().shakecamera();
         StartCoroutine(WaitAndRestart(3f));
     }
