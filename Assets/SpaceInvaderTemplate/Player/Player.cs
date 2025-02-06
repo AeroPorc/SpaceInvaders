@@ -9,13 +9,20 @@ public class Player : MonoBehaviour
     [SerializeField] private float maxSpeed;
     [SerializeField] private float acceleration;
 
-    [SerializeField] private Bullet bulletPrefab = null;
+    [SerializeField] private GameObject bulletPrefab = null;
     [SerializeField] private Transform shootAt = null;
     [SerializeField] private float shootCooldown;
     [SerializeField] private string collideWithTag = "Untagged";
 
-    private float lastShootTimestamp = Mathf.NegativeInfinity;
+    [SerializeField] private int _health = 3;
 
+    private GameObject _camera;
+
+    private float lastShootTimestamp = Mathf.NegativeInfinity;
+    void Awake()
+    {
+        _camera = GameObject.FindGameObjectWithTag("MainCamera");
+    }
     void Update()
     {
         UpdateMovement();
@@ -52,7 +59,14 @@ public class Player : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag != collideWithTag) { return; }
+        
+        Destroy(collision.gameObject);
+        _camera.GetComponent<CameraShake>().shakecamera();
 
-        GameManager.Instance.PlayGameOver();
+        _health--;
+        if (_health <= 0)
+        {
+            GameManager.Instance.PlayGameOver();
+        }
     }
 }

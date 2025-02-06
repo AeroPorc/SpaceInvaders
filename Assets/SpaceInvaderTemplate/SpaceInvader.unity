@@ -189,7 +189,7 @@ MonoBehaviour:
   currentSpeed: 2
   maxSpeed: 4
   acceleration: 5
-  bulletPrefab: {fileID: 7369880722360228486, guid: 42269f87d33f3eb4898473401db125ae,
+  bulletPrefab: {fileID: 8901371870798798308, guid: 42269f87d33f3eb4898473401db125ae,
     type: 3}
   shootAt: {fileID: 495127406}
   shootCooldown: 0.7
