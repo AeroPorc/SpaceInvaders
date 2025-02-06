@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 1348237823}
   - component: {fileID: 1348237822}
   m_Layer: 0
-  m_Name: FadeManager
+  m_Name: FadeManage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
