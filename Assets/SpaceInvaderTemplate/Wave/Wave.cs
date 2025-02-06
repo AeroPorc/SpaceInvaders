@@ -49,6 +49,8 @@ public class Wave : MonoBehaviour
     List<Column> invaderPerColumn = new(); // Keeps track of invaders per column. A column will be removed if empty.
     List<Row> invaderPerRow = new(); // Keeps track of invaders per row. A row will be removed if empty.
 
+    AudioSource audioSource;
+
     void Awake()
     {
         shootCooldown = timeBeforeFirstShoot;
@@ -80,13 +82,40 @@ public class Wave : MonoBehaviour
                 invaderPerRow[j].invaders.Add(invader);
             }
         }
-        
+        UpdateAmbiance();
     }
 
     void Update()
     {
         UpdateMovement();
         UpdateShoot();
+    }
+
+    private void UpdateAmbiance()
+    {
+        if (invaders.Count <= 0)
+        {
+            GameManager.Instance.PlayVictory();
+        }
+
+        if (invaders.Count > invaders.Count / 2)
+        {
+            if (audioSource != null ) audioSource.GetComponent<AudioSource>().Stop();
+            audioSource = AudioManager.Instance.PlayPlayerSound(6);
+            audioSource.loop = true;
+        }
+        else if (invaders.Count > invaders.Count / 4)
+        {
+            if (audioSource != null ) audioSource.GetComponent<AudioSource>().Stop();
+            audioSource = AudioManager.Instance.PlayPlayerSound(5);
+            audioSource.loop = true;
+        }
+        else
+        {
+            if (audioSource != null ) audioSource.GetComponent<AudioSource>().Stop();
+            audioSource = AudioManager.Instance.PlayPlayerSound(8);
+            audioSource.loop = true;
+        }
     }
 
     private void UpdateShoot()

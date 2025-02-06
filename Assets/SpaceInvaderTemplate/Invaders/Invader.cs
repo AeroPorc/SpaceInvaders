@@ -28,8 +28,8 @@ public class Invader : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag != collideWithTag) { return; }
-        float time = AudioManager.Instance.PlayPlayerSound(1);
-        Destroy(gameObject, time);
+        AudioSource audio = AudioManager.Instance.PlayPlayerSound(2);
+        Destroy(audio, 0.5f);
         Instantiate(bloodParticlePrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
         Destroy(collision.gameObject);
@@ -38,5 +38,7 @@ public class Invader : MonoBehaviour
     public void Shoot()
     {
         Instantiate(bulletPrefab, shootAt.position, Quaternion.identity);
+        AudioSource audio = AudioManager.Instance.PlayPlayerSound(0);
+        Destroy(audio, 0.5f);
     }
 }
