@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject _camera;
     [SerializeField] private GameObject _gameOverPrefab;
+    private bool _activated = false;
 
     void Awake()
     {
@@ -76,11 +77,15 @@ public class GameManager : MonoBehaviour
     public void PlayGameOver()
     {
         Debug.Log("Game Over");
-        GameObject gameOverInstance = GameObject.Instantiate(_gameOverPrefab);
-        Vector3 position = _camera.transform.position + _camera.transform.forward * 1f;
-        position.z = -9f;
-        gameOverInstance.transform.position = position;
-        _camera.GetComponent<CameraShake>().shakecamera();
+        if(_activated)
+        {
+            GameObject gameOverInstance = GameObject.Instantiate(_gameOverPrefab);
+            Vector3 position = _camera.transform.position + _camera.transform.forward * 1f;
+            position.z = -9f;
+            gameOverInstance.transform.position = position;
+            _camera.GetComponent<CameraShake>().shakecamera();
+        }
+
         StartCoroutine(WaitAndRestart(3f));
     }
 
@@ -104,6 +109,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            _activated = !_activated;
+        }
+        if(_activated)
         {
             _camera.GetComponent<Volume>().weight = 1f;
         }
