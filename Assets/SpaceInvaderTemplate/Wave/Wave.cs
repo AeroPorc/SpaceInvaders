@@ -30,6 +30,8 @@ public class Wave : MonoBehaviour
 
     // Distance moved when moving downward
     [SerializeField] private float downStep = 1f;
+    [SerializeField] private float _negativeOffset = -0.1f;
+    [SerializeField] private float _positiveOffset = 0.1f;
 
     private Bounds Bounds => new Bounds(transform.position, new Vector3(bounds.x, bounds.y, 1000f));
 
@@ -65,7 +67,12 @@ public class Wave : MonoBehaviour
         {
             for (int j = 0; j < rows; j++)
             {
-                Invader invader = GameObject.Instantiate<Invader>(invaderPrefab, GetPosition(i, j), Quaternion.identity, transform);
+                Vector3 randomOffset = new Vector3(
+                    Random.Range(_negativeOffset, _positiveOffset), 
+                    Random.Range(_negativeOffset, _positiveOffset), 
+                    0f
+                );
+                Invader invader = GameObject.Instantiate<Invader>(invaderPrefab, GetPosition(i, j) + randomOffset, Quaternion.identity, transform);
                 invader.Initialize(new Vector2Int(i, j));
                 invader.onDestroy += RemoveInvader;
                 invaders.Add(invader);
@@ -214,7 +221,7 @@ public class Wave : MonoBehaviour
                 {
                     Destroy(BloodDecalParent);
                 }
-
+                FadeManager.Instance.StartFadeIn();
             }
             else
             {
