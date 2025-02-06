@@ -147,7 +147,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16424766}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 310e72ab71e6bfb40801e84eb969c6ad, type: 3}
@@ -336,6 +336,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounds: {x: 16, y: 9}
   gameOverHeight: 0.8
+  _camera: {fileID: 805531689}
+  _gameOverPrefab: {fileID: 0}
 --- !u!4 &281186784
 Transform:
   m_ObjectHideFlags: 0
@@ -906,12 +908,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadzone: 0.2
+  currentSpeed: 0
   maxSpeed: 5
-  bulletPrefab: {fileID: 7369880722360228486, guid: 42269f87d33f3eb4898473401db125ae,
+  bulletPrefab: {fileID: 8901371870798798308, guid: 42269f87d33f3eb4898473401db125ae,
     type: 3}
   shootAt: {fileID: 1091247398}
   shootCooldown: 0.3
   collideWithTag: Untagged
+  _health: 3
+  _particlePrefab: {fileID: 0}
 --- !u!212 &1506162583
 SpriteRenderer:
   m_ObjectHideFlags: 0

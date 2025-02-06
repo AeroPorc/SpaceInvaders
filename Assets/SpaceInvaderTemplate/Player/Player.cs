@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
     [SerializeField] private float deadzone;
     [SerializeField] private float currentSpeed;
     [SerializeField] private float maxSpeed;
-    [SerializeField] private float acceleration;
 
     [SerializeField] private GameObject bulletPrefab = null;
     [SerializeField] private Transform shootAt = null;
@@ -41,10 +40,9 @@ public class Player : MonoBehaviour
         float move = Input.GetAxis("Horizontal");
         if (Mathf.Abs(move) < deadzone) { return; }
 
-        float targetSpeed = move * maxSpeed; 
-        currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, acceleration * Time.deltaTime);
+        move = Mathf.Sign(move);
+        float delta = move * maxSpeed * Time.deltaTime;
 
-        float delta = currentSpeed * Time.deltaTime;
         transform.position = GameManager.Instance.KeepInBounds(transform.position + Vector3.right * delta);
     }
 
