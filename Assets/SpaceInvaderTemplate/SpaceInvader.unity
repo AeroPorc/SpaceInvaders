@@ -921,7 +921,7 @@ MonoBehaviour:
   shootRandomMin: {x: 2, y: 4}
   shootRandomMax: {x: 0.5, y: 1.5}
   timeBeforeFirstShoot: 5
-  downStep: 0.6
+  downStep: 0.45
   _negativeOffset: -0.1
   _positiveOffset: 0.1
 --- !u!4 &1833304615
