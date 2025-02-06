@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class RandomAnimation : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Animator myAnimations = new Animator();
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        myAnimations = GetComponent<Animator>();
+        var elementrandom = Random.Range(0, 2);
+        print(elementrandom);
+        myAnimations.SetInteger("typeanim",elementrandom);
     }
 }
+//

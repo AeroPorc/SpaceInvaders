@@ -191,6 +191,11 @@ PrefabInstance:
       propertyPath: m_Animations.Array.data[0]
       value: 
       objectReference: {fileID: 7400000, guid: f10185c4ffe657248b10ad63788934d7, type: 2}
+    - target: {fileID: 6677638122128732739, guid: 7ab41d612eaa4c040b94ebea77be05a2,
+        type: 3}
+      propertyPath: myAnimations.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7429291776354201643, guid: 7ab41d612eaa4c040b94ebea77be05a2,
         type: 3}
       propertyPath: m_Name
