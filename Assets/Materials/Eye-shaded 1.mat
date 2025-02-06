@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Amplify Shader
+  m_Name: Eye-shaded 1
   m_Shader: {fileID: 4800000, guid: 619ed5963218dfd4091b26e865734420, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -35,7 +35,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample0:
-        m_Texture: {fileID: 2800000, guid: d4e7d22e290ecc6499506c45a05c512c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5d3e47e0b75ce1743bb06d70b601c070, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -60,7 +60,7 @@ Material:
     - _DstBlend: 10
     - _EnableFogOnTransparent: 1
     - _Float2: 0.367
-    - _HDR: 5
+    - _HDR: 2.5
     - _OpaqueCullMode: 2
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
