@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public float PlayPlayerSound(int index)
+    public AudioSource PlayPlayerSound(int index)
     {
         if (audioClips != null)
         {
@@ -31,9 +31,9 @@ public class AudioManager : MonoBehaviour
             AudioSource audioSource = audioPlayer.AddComponent<AudioSource>();
             audioSource.clip = audioClips[index];
             audioSource.Play();
-            return audioSource.clip.length;
+            return audioSource;
         }
-        return 0;
+        return null;
     }
 
     public void PlayPlayerSoundMove(int index, float audioStereoPan)

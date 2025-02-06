@@ -74,6 +74,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    public void PlayVictory()
+    {
+        Debug.Log("Victory");
+        Time.timeScale = 0f;
+    }
+
     public void OnDrawGizmos()
     {
         Gizmos.color = Color.gray;

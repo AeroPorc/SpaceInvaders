@@ -43,13 +43,15 @@ public class Player : MonoBehaviour
     {
         Instantiate(bulletPrefab, shootAt.position, Quaternion.identity);
         lastShootTimestamp = Time.time;
-        AudioManager.Instance.PlayPlayerSound(1);
+        AudioSource audio = AudioManager.Instance.PlayPlayerSound(3);
+        Destroy(audio, 0.5f);
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag != collideWithTag) { return; }
 
+        AudioManager.Instance.PlayPlayerSound(4);
         GameManager.Instance.PlayGameOver();
     }
 }

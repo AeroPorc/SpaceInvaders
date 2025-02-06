@@ -46,6 +46,7 @@ public class FadeManager : MonoBehaviour
     public void StartFadeIn()
     {
         StartCoroutine(FadeVignetteSequence(minIntensity, maxIntensity));
+        AudioManager.Instance.PlayPlayerSound(1);
     }
 
     private IEnumerator FadeVignetteSequence(float maxIntensity, float minIntensity)
@@ -69,7 +70,6 @@ public class FadeManager : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log($"Fade Vignette from {startValue} to {endValue} done !");
         vignette.intensity.value = endValue;
     }
 }
