@@ -194,6 +194,7 @@ MonoBehaviour:
   shootAt: {fileID: 495127406}
   shootCooldown: 0.7
   collideWithTag: Untagged
+  _health: 3
 --- !u!212 &582271455
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -536,7 +537,7 @@ MonoBehaviour:
   m_IsGlobal: 1
   priority: 0
   blendDistance: 0
-  weight: 1
+  weight: 0
   sharedProfile: {fileID: 11400000, guid: a426c1d414e2f39499133c2ed20d7fa3, type: 2}
 --- !u!114 &805531696
 MonoBehaviour:
@@ -1045,7 +1046,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6cdc5fc3ab8322548b5ecbcfa9f079b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ea8e587cfd8841f41ac1eb3894587d5b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
