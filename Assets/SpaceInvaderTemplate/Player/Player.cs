@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
 
     [SerializeField] private int _health = 3;
 
+    [SerializeField] private GameObject _particlePrefab;
+    private bool activated = false;
+
     private GameObject _camera;
 
     private float lastShootTimestamp = Mathf.NegativeInfinity;
@@ -25,6 +28,10 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            activated = !activated;
+        }
         UpdateMovement();
         UpdateActions();
     }
@@ -61,7 +68,12 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag != collideWithTag) { return; }
         
         Destroy(collision.gameObject);
-        _camera.GetComponent<CameraShake>().shakecamera();
+        if(activated == true)
+        {
+            _camera.GetComponent<CameraShake>().shakecamera();
+            Instantiate(_particlePrefab, collision.transform.position, Quaternion.identity);
+        }
+        
 
         _health--;
         if (_health <= 0)
