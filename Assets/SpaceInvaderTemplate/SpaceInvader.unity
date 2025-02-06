@@ -188,7 +188,7 @@ MonoBehaviour:
   deadzone: 0.2
   currentSpeed: 0
   maxSpeed: 5
-  acceleration: 0
+  acceleration: 1
   bulletPrefab: {fileID: 7369880722360228486, guid: 42269f87d33f3eb4898473401db125ae,
     type: 3}
   shootAt: {fileID: 495127406}
@@ -865,6 +865,8 @@ MonoBehaviour:
   shootRandomMax: {x: 0.5, y: 1.5}
   timeBeforeFirstShoot: 5
   downStep: 0.3
+  _negativeOffset: -0.1
+  _positiveOffset: 0.1
 --- !u!4 &1833304615
 Transform:
   m_ObjectHideFlags: 0
