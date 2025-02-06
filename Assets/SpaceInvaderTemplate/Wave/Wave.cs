@@ -221,7 +221,7 @@ public class Wave : MonoBehaviour
                 {
                     Destroy(BloodDecalParent);
                 }
-                FadeManager.Instance.StartFadeIn();
+
             }
             else
             {
