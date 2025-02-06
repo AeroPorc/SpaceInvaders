@@ -89,6 +89,11 @@ public class Wave : MonoBehaviour
         UpdateShoot();
     }
 
+    void FixedUpdate()
+    {
+        UpdateInvaderPosition();
+    }
+
     private void UpdateShoot()
     {
         shootCooldown -= Time.deltaTime;
@@ -252,5 +257,20 @@ public class Wave : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, new Vector3(bounds.x, bounds.y, 0f));
+    }
+    public void UpdateInvaderPosition()
+    {
+        foreach (var invader in invaders)
+        {
+            Vector3 originalPosition = GetPosition(invader.GridIndex.x, invader.GridIndex.y);
+            Vector3 currentPosition = invader.transform.position;
+            Vector3 randomOffset = new Vector3(
+            Mathf.Sin(Time.time * Random.Range(0.1f, 1f)) * 2f,
+            Mathf.Cos(Time.time * Random.Range(0.1f, 1f)) * 2f,
+            0f
+            );
+            Vector3 targetPosition = originalPosition + randomOffset;
+            invader.transform.position = Vector3.Lerp(currentPosition, targetPosition, Time.deltaTime);
+        }
     }
 }
