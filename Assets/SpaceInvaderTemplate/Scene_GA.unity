@@ -189,7 +189,7 @@ PrefabInstance:
     - target: {fileID: 8901371870798798308, guid: 42269f87d33f3eb4898473401db125ae,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -208,6 +208,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BloodSplatter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775779931079856779, guid: 010dd442dd87f154890c014b81c27f25,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8756571428301988153, guid: 010dd442dd87f154890c014b81c27f25,
         type: 3}
@@ -356,6 +361,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &595019023
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4724970415690683995, guid: 7ab41d612eaa4c040b94ebea77be05a2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724970415690683995, guid: 7ab41d612eaa4c040b94ebea77be05a2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724970415690683995, guid: 7ab41d612eaa4c040b94ebea77be05a2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724970415690683995, guid: 7ab41d612eaa4c040b94ebea77be05a2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724970415690683995, guid: 7ab41d612eaa4c040b94ebea77be05a2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724970415690683995, guid: 7ab41d612eaa4c040b94ebea77be05a2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724970415690683995, guid: 7ab41d612eaa4c040b94ebea77be05a2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724970415690683995, guid: 7ab41d612eaa4c040b94ebea77be05a2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724970415690683995, guid: 7ab41d612eaa4c040b94ebea77be05a2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724970415690683995, guid: 7ab41d612eaa4c040b94ebea77be05a2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7429291776354201643, guid: 7ab41d612eaa4c040b94ebea77be05a2,
+        type: 3}
+      propertyPath: m_Name
+      value: Invader
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7ab41d612eaa4c040b94ebea77be05a2, type: 3}
 --- !u!1001 &1220131204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -422,7 +495,7 @@ PrefabInstance:
     - target: {fileID: 8901371870798798308, guid: 47d2029f071079c4a98ac35325b21f24,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -655,3 +728,4 @@ SceneRoots:
   - {fileID: 145520290}
   - {fileID: 1220131204}
   - {fileID: 222673625}
+  - {fileID: 595019023}
