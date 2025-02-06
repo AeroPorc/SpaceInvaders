@@ -9772,7 +9772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bloodDecalPrefab: {fileID: 3670921277870450747, guid: 2f9e8a238ed00e14489955b15bf41fe6,
     type: 3}
-  _numSplatters: 10
+  _numSplatters: 30
 --- !u!1 &4650657808753333201
 GameObject:
   m_ObjectHideFlags: 0
