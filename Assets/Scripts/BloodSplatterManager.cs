@@ -33,7 +33,7 @@ public class BloodSplatterManager : MonoBehaviour
             if (_particles[i].remainingLifetime <= 0.1f) 
             {
             Vector3 spawnPosition = _particles[i].position;
-            Quaternion randomRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+            Quaternion randomRotation = Quaternion.Euler(0, 0, 0);
             spawnPosition.z = 1;
             Instantiate(_bloodDecalPrefab, spawnPosition, randomRotation, bloodDecalParent.transform);
             }
