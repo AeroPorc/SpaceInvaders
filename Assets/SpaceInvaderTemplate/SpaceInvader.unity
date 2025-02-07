@@ -331,7 +331,8 @@ MonoBehaviour:
   shootCooldown: 0.7
   collideWithTag: Untagged
   _health: 3
-  _particlePrefab: {fileID: 0}
+  _particlePrefab: {fileID: 2775779931079856779, guid: d9b110166fb156748983c699d1868322,
+    type: 3}
 --- !u!212 &582271455
 SpriteRenderer:
   m_ObjectHideFlags: 0
